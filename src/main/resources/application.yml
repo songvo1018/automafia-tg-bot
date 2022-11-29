@@ -1,0 +1,5 @@
+telegram:
+  botName: automafiatestbot
+  token: 5635760298:AAErbKa_SIFjmSs_7xIwt7QjGwFVvHosWYM
+server:
+  port: 9911

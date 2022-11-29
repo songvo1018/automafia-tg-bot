@@ -1,0 +1,16 @@
+//    start -> Q: Hi my friend, please, say me, how i and your friend will call you? You can change it before start next game A: username
+//    Q: okay, _____, what you want? A: CREATE GAME / CONNECT GAME
+//    Create
+//    Q:  How Many players in game? A: 4 / 5 / 6 / 7 / 8 / 9 / 10
+//    Q:  In your game exist Doctor? A: YES / NO
+//    Q:  In your game exist Maniac? A: YES / NO
+//    Q:  Would you like unanimous decision of Mafia-side players? A: YES / NO
+//    M:  Your game will be: Count Players ___, Doctor ___, Maniac ___, Mafia unanimous decision ___
+//    Q:  Ready to start? A: YES / NO
+//    M:  Your game key is _________, please give it your friends and wait fun
+//                      Connect
+//          Q: You have game key? Enter him in message A: gameKey
+//          M: AMAZING, please
+//
+//
+//
