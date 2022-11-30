@@ -9,8 +9,10 @@ class MessageHandler {
     fun handle(update: Update): ResponseObject {
         val message = update.message
         val responseText = if (message.hasText()) {
+            println("message handler")
+            println("user print: ${message.text}")
             when (val messageText = message.text) {
-                "/${Commands.START}" -> commonFunctions.welcome(messageText)
+                "/${Commands.START.toString().lowercase()}" -> commonFunctions.welcome(messageText)
                 else -> commonFunctions.unknown(messageText)
             }
         } else {

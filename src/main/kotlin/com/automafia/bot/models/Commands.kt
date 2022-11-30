@@ -8,5 +8,6 @@ enum class Commands {
     READY,
     LEAVE,
     TARGET,
-    REVIEW
+    REVIEW,
+    HEALTH
 }
