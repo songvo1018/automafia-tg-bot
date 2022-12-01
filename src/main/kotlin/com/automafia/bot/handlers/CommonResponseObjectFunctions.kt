@@ -15,10 +15,10 @@ class CommonResponseObjectFunctions {
             "You chose $userInput",
             "",
             listOf(
-                AnswerObject("Создать игру", "/${Commands.CREATE.toString().lowercase()}"),
-                AnswerObject("Присоединиться", "/${Commands.CONNECT.toString().lowercase()}"),
-                AnswerObject("Оставить отзыв", "/${Commands.REVIEW.toString().lowercase()}"),
-                AnswerObject("health check", "/${Commands.HEALTH.toString().lowercase()}")
+                AnswerObject("Создать игру", "/${Commands.CREATE}"),
+                AnswerObject("Присоединиться", "/${Commands.CONNECT}"),
+                AnswerObject("Оставить отзыв", "/${Commands.REVIEW}"),
+                AnswerObject("health check", "/${Commands.HEALTH}")
             )
         )
     }
@@ -35,8 +35,8 @@ class CommonResponseObjectFunctions {
         val response : HttpResponse<String> = manager.get(mapOf(), Endpoints.HEALTH)
         println(response.toString())
         return ResponseObject(
-            "Неизвестная команда: $userInput",
-            "Верниуться к началу",
+            "Выбрано: $userInput",
+            "Сервис функционирует",
             listOf(AnswerObject("Вернуться к началу", "/start"))
         )
     }

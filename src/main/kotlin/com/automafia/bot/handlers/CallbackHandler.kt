@@ -11,9 +11,9 @@ class CallbackHandler {
         val responseText = if (update.callbackQuery.data.isNotEmpty()) {
             println("callback handler")
             println("user chose: ${update.callbackQuery.data}")
-            when (val data = update.callbackQuery.data) {
-                "/${Commands.START.toString().lowercase()}" -> commonFunctions.welcome(data)
-                "/${Commands.HEALTH.toString().lowercase()}" -> commonFunctions.health(data)
+            when (val data = update.callbackQuery.data.uppercase()) {
+                "/${Commands.START}" -> commonFunctions.welcome(data)
+                "/${Commands.HEALTH}" -> commonFunctions.health(data)
                 else -> commonFunctions.unknown(data)
             }
         } else {

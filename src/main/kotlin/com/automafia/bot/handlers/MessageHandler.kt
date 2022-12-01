@@ -11,8 +11,8 @@ class MessageHandler {
         val responseText = if (message.hasText()) {
             println("message handler")
             println("user print: ${message.text}")
-            when (val messageText = message.text) {
-                "/${Commands.START.toString().lowercase()}" -> commonFunctions.welcome(messageText)
+            when (val messageText = message.text.uppercase()) {
+                "/${Commands.START}" -> commonFunctions.welcome(messageText)
                 else -> commonFunctions.unknown(messageText)
             }
         } else {
