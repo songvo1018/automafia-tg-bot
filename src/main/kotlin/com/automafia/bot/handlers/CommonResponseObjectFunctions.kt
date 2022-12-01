@@ -37,7 +37,22 @@ class CommonResponseObjectFunctions {
         return ResponseObject(
             "Выбрано: $userInput",
             "Сервис функционирует",
-            listOf(AnswerObject("Вернуться к началу", "/start"))
+            listOf(
+                AnswerObject("Вернуться к началу", "/${Commands.START}"),
+                AnswerObject("Конфигурации", "/${Commands.INITIALIZECONFIGS}")
+            )
+        )
+    }
+
+    fun initializeConfigs(userInput: String): ResponseObject {
+        val response: HttpResponse<String> = manager.get(mapOf(), Endpoints.INITIALIZE_CONFIGS)
+        println(response.body())
+        return ResponseObject(
+            "Выбрано: $userInput",
+            response.body(),
+            listOf(
+                AnswerObject("Вернуться к началу", "${Commands.START}")
+            )
         )
     }
 }

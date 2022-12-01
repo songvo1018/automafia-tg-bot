@@ -55,6 +55,7 @@ class RequestManager {
             Endpoints.NEXT_GO -> "/api/next-go/" //only for game owner
             Endpoints.END_GAME -> "/api/end-game/" //only for game owner
             Endpoints.NEXT_ROUND -> "/api/next-round/" //only for game owner
+            Endpoints.INITIALIZE_CONFIGS -> "/api/default-configs"
         }
         return urlEndpoint
     }

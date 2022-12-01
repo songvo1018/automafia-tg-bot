@@ -14,6 +14,7 @@ class CallbackHandler {
             when (val data = update.callbackQuery.data.uppercase()) {
                 "/${Commands.START}" -> commonFunctions.welcome(data)
                 "/${Commands.HEALTH}" -> commonFunctions.health(data)
+                "/${Commands.INITIALIZECONFIGS}" -> commonFunctions.initializeConfigs(data)
                 else -> commonFunctions.unknown(data)
             }
         } else {

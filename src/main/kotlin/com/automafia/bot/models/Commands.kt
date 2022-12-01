@@ -9,5 +9,6 @@ enum class Commands {
     LEAVE,
     TARGET,
     REVIEW,
-    HEALTH
+    HEALTH,
+    INITIALIZECONFIGS
 }

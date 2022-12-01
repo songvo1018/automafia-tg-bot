@@ -10,4 +10,5 @@ enum class Endpoints {
     NEXT_ROUND, //only for game owner
     END_GAME, //only for game owner
     HEALTH,
+    INITIALIZE_CONFIGS,
 }
