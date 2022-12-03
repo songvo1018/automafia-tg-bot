@@ -8,6 +8,6 @@ data class ResponseObject(
     constructor(responseText: String, nexQuestion: String) : this(
         responseText,
         nexQuestion,
-        listOf(AnswerObject("Вернуться в начало", "/start"))
+        listOf(AnswerObject("Вернуться в начало", "/${Commands.START}"))
     )
 }

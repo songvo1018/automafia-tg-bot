@@ -26,7 +26,7 @@ class RequestManager {
         val request = createRequest(RequestMethods.GET, createUrl(urlString, urlParams), null)
 
         val response = createResponse(request)
-        println(response.body())
+        println("get request" + response.statusCode())
         return response
     }
 
@@ -39,7 +39,7 @@ class RequestManager {
         val request = createRequest(RequestMethods.POST, createUrl(urlString, urlParams), requestBody)
 
         val response = createResponse(request)
-        println(response.body())
+        println("post request" + response.statusCode())
         return response
     }
 
@@ -56,6 +56,8 @@ class RequestManager {
             Endpoints.END_GAME -> "/api/end-game/" //only for game owner
             Endpoints.NEXT_ROUND -> "/api/next-round/" //only for game owner
             Endpoints.INITIALIZE_CONFIGS -> "/api/default-configs"
+            Endpoints.CONFIG_LIST -> "/api/game-configs"
+            Endpoints.CONFIG_SELECTED -> "/api/create-on-config"
         }
         return urlEndpoint
     }

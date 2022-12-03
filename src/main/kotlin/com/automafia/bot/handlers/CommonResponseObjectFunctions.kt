@@ -1,5 +1,6 @@
 package com.automafia.bot.handlers
 
+import com.automafia.bot.handlers.scenarios.Creating
 import com.automafia.bot.models.AnswerObject
 import com.automafia.bot.models.Commands
 import com.automafia.bot.models.ResponseObject
@@ -9,6 +10,18 @@ import java.net.http.HttpResponse
 
 class CommonResponseObjectFunctions {
     private val manager: RequestManager = RequestManager()
+    private val creatingScenarios: Creating = Creating()
+
+    fun handleMethodResolver (userInput: String): ResponseObject {
+        return when (userInput) {
+            "/${Commands.START}" -> welcome(userInput)
+            "/${Commands.CREATE}" -> creatingScenarios.create(userInput)
+            "/${Commands.CONFIGLIST}" -> creatingScenarios.configList(userInput)
+            "/${Commands.HEALTH}" -> health(userInput)
+            "/${Commands.INITIALIZECONFIGS}" -> initializeConfigs(userInput)
+            else -> unknown(userInput)
+        }
+    }
 
     fun welcome(userInput: String): ResponseObject {
         return ResponseObject(
@@ -27,7 +40,7 @@ class CommonResponseObjectFunctions {
         return ResponseObject(
             "Неизвестная команда: $userInput",
             "Верниуться к началу",
-            listOf(AnswerObject("Вернуться к началу", "/start"))
+            listOf(AnswerObject("Вернуться к началу", "/${Commands.START}"))
         )
     }
 
@@ -51,7 +64,7 @@ class CommonResponseObjectFunctions {
             "Выбрано: $userInput",
             response.body(),
             listOf(
-                AnswerObject("Вернуться к началу", "${Commands.START}")
+                AnswerObject("Вернуться к началу", "/${Commands.START}")
             )
         )
     }

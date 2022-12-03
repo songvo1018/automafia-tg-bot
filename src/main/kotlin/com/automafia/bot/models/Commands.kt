@@ -4,6 +4,8 @@ enum class Commands {
     START,
     CREATE,
     CONNECT,
+    CONFIGLIST,
+    SELECT,
     SETTINGS,
     READY,
     LEAVE,
